@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
         GroundedCheck();
         if (_jumps > 0)
         {
+            Rb.linearVelocity = Vector2.zero;
             Rb.AddForce(new Vector2(0, JumpHeight), ForceMode2D.Impulse);
 
             _jumps--;
@@ -71,5 +72,10 @@ public class PlayerController : MonoBehaviour
         {
             _jumps = 2;
         }
+    }
+
+    public void OnInput()
+    {
+        Debug.Log("Input");
     }
 }
