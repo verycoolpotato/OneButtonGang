@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,10 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
+      
 
         
     }
@@ -74,8 +72,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnInput()
+    
+
+    public void OnHold(InputAction.CallbackContext context)
     {
-        Debug.Log("Input");
+        float heldTime;
+
+        if (context.performed) // button pressed
+        {
+            
+        }
+        else if (context.canceled) // button released
+        {
+          
+        }
+
+        heldTime = 0; 
     }
+
+    private void CheckInputType(float time)
+    {
+        if(time < 0.2f)
+        {
+            Jump();
+        }
+    }
+
 }

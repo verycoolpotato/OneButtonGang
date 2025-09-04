@@ -7,24 +7,24 @@
             "id": "df70fa95-8a34-4494-b137-73ab6b9c7d37",
             "actions": [
                 {
-                    "name": "Input",
+                    "name": "Hold",
                     "type": "Button",
-                    "id": "ef566475-e1cb-422c-aeb7-4eafe263b7d4",
+                    "id": "653ec01e-2f16-4260-a9ea-6d43c74984fe",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Tap,Hold",
+                    "interactions": "Hold(pressPoint=0.3)",
                     "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "c9491e2a-d49d-4183-a6f5-8f43b94d1398",
+                    "id": "5e7f2927-bb65-4f53-a331-3c1e67675111",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Input",
+                    "action": "Hold",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
