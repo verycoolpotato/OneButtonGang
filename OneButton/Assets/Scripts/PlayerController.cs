@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     [Tooltip("What layers are detected as Ground?")]
     [SerializeField] LayerMask GroundedLayers;
 
-  
+    [Tooltip("What layers are Breakble?")]
+    [SerializeField] LayerMask BreakableLayers;
 
     private int _jumps = 2;
 
@@ -115,7 +116,13 @@ public class PlayerController : MonoBehaviour
         }
         else if( time > 1)
         {
-            Debug.Log("swing");
+           CheckHit();
         }
     }
+
+    private void CheckHit()
+    {
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.1f, Vector2.down, 0.5f, GroundedLayers);
+    }
+
 }
