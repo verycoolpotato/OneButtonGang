@@ -10,10 +10,10 @@ public class PlayerController : MonoBehaviour
 
    
 
-    private enum Directions { Left = -1, Right = 1 };
+    public enum Directions { Left = -1, Right = 1 };
 
     [Tooltip("The direction of movement")]
-    [SerializeField] private Directions Direction = Directions.Right;
+    public Directions Direction = Directions.Right;
 
     [Tooltip("What layers are detected as Ground?")]
     [SerializeField] LayerMask GroundedLayers;
