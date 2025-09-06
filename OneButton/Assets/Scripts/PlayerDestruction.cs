@@ -16,27 +16,27 @@ public class PlayerDestruction : MonoBehaviour
         
     }
 
-    
+
     private void overlapCheck()
     {
-        GameObject ObjectToDamage = null;
-
-         Collider2D hit = Physics2D.OverlapCircle(transform.position,0.1f,BreakableLayers);
+        
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, 0.1f, BreakableLayers);
 
         if (hit != null)
         {
-            ObjectToDamage = CanDamage(hit.transform.gameObject);
+            GameObject objectToDamage = CanDamage(hit.transform.gameObject);
 
-            //Check if has destructible
-            Destructible destructible = ObjectToDamage.GetComponent<Destructible>();
-
-            if (destructible != null)
+            if (objectToDamage != null)
             {
-                destructible.health--;
+                Destructible destructible = objectToDamage.GetComponent<Destructible>();
+                if (destructible != null)
+                    destructible.health--;
+    
+                
             }
         }
-          
     }
+
 
     //checks if this object can be damaged, objects can not be damaged repeatedly
 
