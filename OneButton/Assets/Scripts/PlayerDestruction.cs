@@ -2,46 +2,42 @@ using UnityEngine;
 
 public class PlayerDestruction : MonoBehaviour
 {
-    [SerializeField] PlayerController controller;
 
-    [SerializeField] LayerMask BreakableLayers;
 
-   
-    private void Update()
+
+
+
+
+    public void ApplyKnockback(GameObject target, int directionX, float knockback)
     {
-      overlapCheck();
-      
+        if (target == null) return;
 
+        Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
+        if (rb == null) return;
 
-        
+        // Diagonal direction: equal x and y
+        Vector2 diagonal = new Vector2(directionX, 1).normalized; // normalized ensures equal magnitude
+        Vector2 force = diagonal * knockback;
+
+        rb.AddForce(force, ForceMode2D.Impulse);
     }
 
 
-    private void overlapCheck()
+
+
+
+    public void DealDamage(GameObject target)
     {
-        
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, 0.1f, BreakableLayers);
+        Destructible destructible = target.GetComponent<Destructible>();
+        if (destructible != null)
 
-        if (hit != null)
-        {
-            GameObject objectToDamage = CanDamage(hit.transform.gameObject);
-
-            if (objectToDamage != null)
-            {
-                Destructible destructible = objectToDamage.GetComponent<Destructible>();
-                if (destructible != null)
-                    destructible.health--;
-    
-                
-            }
-        }
+            destructible.health--;
     }
-
 
     //checks if this object can be damaged, objects can not be damaged repeatedly
 
     GameObject lastHit = null;
-    private GameObject CanDamage(GameObject hit)
+    public GameObject CanDamage(GameObject hit)
     {
         if (hit!= lastHit)
         {
