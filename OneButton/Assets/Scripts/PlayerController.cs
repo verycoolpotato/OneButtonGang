@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
     //check if on ground, returns whether grounded or not
     private bool Grounded()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.1f, Vector2.down, 0.5f, GroundedLayers);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.2f, Vector2.down, 0.75f, GroundedLayers);
        bool isGrounded = hit.collider != null;
 
        return isGrounded;
@@ -189,8 +189,6 @@ public class PlayerController : MonoBehaviour
                 return rb;
             }
         }
-
-        
         return null;
     }
 

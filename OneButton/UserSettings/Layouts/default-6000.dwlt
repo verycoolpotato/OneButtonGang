@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 165
+  controlID: 167
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -449,7 +449,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 94faffff
+      m_ExpandedIDs: 0efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1053,9 +1053,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -1.3884574, y: -1.8842328, z: 0.041069}
+    m_Target: {x: -1.8638303, y: -1.615543, z: 0.041069}
     speed: 2
-    m_Value: {x: -1.3884574, y: -1.8842328, z: 0.041069}
+    m_Value: {x: -1.8638303, y: -1.615543, z: 0.041069}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1188,7 +1188,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites/Tillables
+    - Assets/Sprites/Character
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1198,15 +1198,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites/Tillables
+  - Assets/Sprites/Character
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\arand\Documents\GitHub\OneButtonGang\OneButton
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b2260000
-    m_LastClickedID: 9906
+    m_SelectedIDs: ea670000
+    m_LastClickedID: 26602
     m_ExpandedIDs: 00000000826700008467000086670000886700008a670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1265,7 +1265,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300003c6200009c260000
+    m_ExpandedInstanceIDs: c62300003c6200009c260000fe670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
