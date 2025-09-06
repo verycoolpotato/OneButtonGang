@@ -115,7 +115,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &8409049096680056053
@@ -176,9 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d3d261b859b248ba7b5f637ffcaec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
+  Health: 1
   Data: {fileID: 11400000, guid: bc5a3efaaadd80e4d9464042f625dd89, type: 2}
   ThisSpriteRenderer: {fileID: 4542409491791872170}
+  HasPlatform: 0
   ActiveSpriteNumber: 0
   ActiveSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &6382521775285115606
@@ -198,7 +199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6003679346793726197
 Transform:
   m_ObjectHideFlags: 0

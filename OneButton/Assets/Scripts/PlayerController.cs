@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float MovementSpeed;
     [SerializeField] private float JumpHeight;
 
+    [Tooltip("Launches diagonally")]
+    [SerializeField] private float SwingKnockback;
    
 
     public enum Directions { Left = -1, Right = 1 };
@@ -116,13 +119,49 @@ public class PlayerController : MonoBehaviour
         }
         else if( time > 1)
         {
+            Debug.Log("Swing");
            CheckHit();
         }
     }
 
     private void CheckHit()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.1f, Vector2.down, 0.5f, GroundedLayers);
+        Vector2 offset = new Vector2((int)Direction, 0) * 1f;
+        Vector2 circlePos = (Vector2)transform.position + offset;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(circlePos, 2f, BreakableLayers);
+
+        Collider2D closest = null;
+        float closestDist = Mathf.Infinity;
+
+        foreach (var hit in hits)
+        {
+            float dist = Vector2.SqrMagnitude((Vector2)hit.transform.position - circlePos);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                closest = hit;
+            }
+        }
+
+        if (closest != null)
+        {
+            Rigidbody2D rb = closest.attachedRigidbody;
+            if (rb != null)
+            {
+                ApplyKnockback(rb);
+            }
+        }
     }
 
+
+    private void ApplyKnockback(Rigidbody2D target)
+    {
+        Debug.Log(target);
+        Vector2 direction = new Vector2(SwingKnockback * (int)Direction, SwingKnockback);
+        
+
+       
+            target.AddForce( direction,ForceMode2D.Impulse);
+    }
 }
