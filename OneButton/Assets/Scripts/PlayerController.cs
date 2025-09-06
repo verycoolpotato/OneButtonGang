@@ -1,6 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,46 +11,63 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float MovementSpeed;
     [SerializeField] private float JumpHeight;
 
+    [Tooltip("Launches diagonally")]
+    [SerializeField] private float SwingKnockback;
    
 
-    private enum Directions { Left = -1, Right = 1 };
+    public enum Directions { Left = -1, Right = 1 };
 
     [Tooltip("The direction of movement")]
-    [SerializeField] private Directions Direction = Directions.Right;
+    public Directions Direction = Directions.Right;
 
     [Tooltip("What layers are detected as Ground?")]
     [SerializeField] LayerMask GroundedLayers;
 
-  
+    [Tooltip("What layers are Breakble?")]
+    [SerializeField] LayerMask BreakableLayers;
 
     private int _jumps = 2;
 
     //For input timings
     private float _heldTime = 0;
     private bool _startHold = false;
-
-   
+    private bool _canMove = true;
+    private float _defaultGravity;
+    private float _defaultMoveSpeed;
 
     private void FixedUpdate()
     {
         AutoRun((int)Direction);
     }
-
+    private void Awake()
+    {
+        _defaultMoveSpeed = MovementSpeed;
+        _defaultGravity = Rb.gravityScale;
+    }
     private void Update()
     {
-        
-
        //Times input
         if (_startHold)
         {
             _heldTime += Time.deltaTime;
         }
+        if(_heldTime > 0.1f)
+        {
+            float rampTime = 0.7f; 
+            float minSpeed = 3f;
+
+            MovementSpeed = _defaultMoveSpeed - (_defaultMoveSpeed - minSpeed) * Mathf.Clamp01(_heldTime / rampTime);
+
+        }
+
+
     }
 
     //Automatic Movement
     private void AutoRun(int direction)
     {
-        Rb.linearVelocityX = MovementSpeed * (int)Direction;
+        if(_canMove)
+            Rb.linearVelocityX = MovementSpeed * (int)Direction;
     }
 
     //Call to reverse the players movement direction
@@ -62,8 +82,7 @@ public class PlayerController : MonoBehaviour
     //Jump
     private void Jump()
     {
-        if (Grounded())
-            _jumps = 2;
+        
 
         if (_jumps > 0)
         {
@@ -86,20 +105,14 @@ public class PlayerController : MonoBehaviour
     
     //Called when spacebar is pressed, checks how long it is held for
     public void OnHold(InputAction.CallbackContext context)
-    { 
-        //NOTE, WE CAN ADD AN ADDITIONAL HOLD BEHAVIOUR WHILE IN THE AIR
-
-        //Improves jump responsiveness while in air
-        if (!Grounded()) 
-        {
-            Jump();
-        }
-        else if (context.performed) //pressed
+    {
+        if (context.performed) //pressed
         {
             _startHold = true;
         }
         else if (context.canceled) //released
         {
+            MovementSpeed = _defaultMoveSpeed;
             CheckInputType(_heldTime);
             _startHold = false;
             _heldTime = 0;
@@ -109,13 +122,85 @@ public class PlayerController : MonoBehaviour
     //called when space is released, determines what action was taken
     private void CheckInputType(float time)
     {
-        if(time < 0.2f)
+        if (Grounded())
+            _jumps = 2;
+
+        if (time < 0.1f)
         {
-            Jump();
+            if(_jumps > 0)
+              Jump();
+            else
+              StartCoroutine(GroundSlam());
         }
-        else if( time > 1)
+        else if (time > 1 && Grounded())
         {
-            Debug.Log("swing");
+            ApplyKnockback(CheckHit());
         }
+    }
+
+    IEnumerator GroundSlam()
+    {
+        _canMove = false;
+
+        // Stop motion and ensure gravity
+        
+        Rb.gravityScale = 0;
+        Rb.linearVelocityY = 0;
+        Rb.linearVelocityX *= 0.5f;
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        Rb.gravityScale = _defaultGravity;
+
+        // Slam down
+        Rb.AddForce(Vector2.down * 30, ForceMode2D.Impulse);
+
+        // Wait until grounded
+        yield return new WaitUntil(() => Grounded());
+
+        _canMove = true;
+    }
+
+    //Checks for enemies to knockback
+    private Rigidbody2D CheckHit()
+    {
+        Vector2 offset = new Vector2((int)Direction, 0) * 1f;
+        Vector2 circlePos = (Vector2)transform.position + offset;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(circlePos, 2f, BreakableLayers);
+
+        Collider2D closest = null;
+        float closestDist = Mathf.Infinity;
+
+        foreach (var hit in hits)
+        {
+            float dist = Vector2.SqrMagnitude((Vector2)hit.transform.position - circlePos);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                closest = hit;
+            }
+        }
+
+        if (closest != null)
+        {
+            Rigidbody2D rb = closest.attachedRigidbody;
+            if (rb != null)
+            {
+                return rb;
+            }
+        }
+
+        
+        return null;
+    }
+
+
+
+    private void ApplyKnockback(Rigidbody2D target)
+    {
+        if (target == null) return; 
+
+        Vector2 direction = new Vector2((int)Direction, 1).normalized * SwingKnockback;
+        target.AddForce(direction, ForceMode2D.Impulse);
     }
 }
