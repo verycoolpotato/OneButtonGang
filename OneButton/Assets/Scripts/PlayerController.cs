@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.GraphicsBuffer;
 
-public class PlayerController : MonoBehaviour
+
+public class PlayerController : PlayerDestruction
 {
     [SerializeField] private Rigidbody2D Rb;
     [SerializeField] private float MovementSpeed;
@@ -13,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     [Tooltip("Launches diagonally")]
     [SerializeField] private float SwingKnockback;
-   
+
 
     public enum Directions { Left = -1, Right = 1 };
 
@@ -46,27 +45,27 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-       //Times input
+        //Times input
         if (_startHold)
         {
             _heldTime += Time.deltaTime;
         }
-        if(_heldTime > 0.1f)
+        if (_heldTime > 0.1f)
         {
-            float rampTime = 0.7f; 
+            float rampTime = 0.7f;
             float minSpeed = 3f;
 
             MovementSpeed = _defaultMoveSpeed - (_defaultMoveSpeed - minSpeed) * Mathf.Clamp01(_heldTime / rampTime);
 
         }
-
+        
 
     }
 
     //Automatic Movement
     private void AutoRun(int direction)
     {
-        if(_canMove)
+        if (_canMove)
             Rb.linearVelocityX = MovementSpeed * (int)Direction;
     }
 
@@ -82,8 +81,6 @@ public class PlayerController : MonoBehaviour
     //Jump
     private void Jump()
     {
-        
-
         if (_jumps > 0)
         {
             Rb.linearVelocity = Vector2.zero;
@@ -96,13 +93,13 @@ public class PlayerController : MonoBehaviour
     //check if on ground, returns whether grounded or not
     private bool Grounded()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.1f, Vector2.down, 0.5f, GroundedLayers);
-       bool isGrounded = hit.collider != null;
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.2f, Vector2.down, 0.75f, GroundedLayers);
+        bool isGrounded = hit.collider != null;
 
-       return isGrounded;
+        return isGrounded;
     }
 
-    
+
     //Called when spacebar is pressed, checks how long it is held for
     public void OnHold(InputAction.CallbackContext context)
     {
@@ -127,23 +124,27 @@ public class PlayerController : MonoBehaviour
 
         if (time < 0.1f)
         {
-            if(_jumps > 0)
-              Jump();
+            if (_jumps > 0)
+                Jump();
             else
-              StartCoroutine(GroundSlam());
+                StartCoroutine(GroundSlam());
         }
         else if (time > 1 && Grounded())
         {
-            ApplyKnockback(CheckHit());
+           GameObject target =  GetClosestObject(Vector2.right * (int)Direction, 0.5f);
+
+            ApplyKnockback(target, (int)Direction,SwingKnockback);
         }
     }
+
+    //Checks for gameobjects directly overlapping with this gameobject
 
     IEnumerator GroundSlam()
     {
         _canMove = false;
 
         // Stop motion and ensure gravity
-        
+
         Rb.gravityScale = 0;
         Rb.linearVelocityY = 0;
         Rb.linearVelocityX *= 0.5f;
@@ -160,15 +161,14 @@ public class PlayerController : MonoBehaviour
         _canMove = true;
     }
 
-    //Checks for enemies to knockback
-    private Rigidbody2D CheckHit()
+    //Checks for target gameobject
+    private GameObject GetClosestObject(Vector2 offset, float radius)
     {
-        Vector2 offset = new Vector2((int)Direction, 0) * 1f;
         Vector2 circlePos = (Vector2)transform.position + offset;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(circlePos, 2f, BreakableLayers);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(circlePos, radius, BreakableLayers);
 
-        Collider2D closest = null;
+        GameObject closestObject = null;
         float closestDist = Mathf.Infinity;
 
         foreach (var hit in hits)
@@ -177,30 +177,11 @@ public class PlayerController : MonoBehaviour
             if (dist < closestDist)
             {
                 closestDist = dist;
-                closest = hit;
+                closestObject = hit.gameObject;
             }
         }
 
-        if (closest != null)
-        {
-            Rigidbody2D rb = closest.attachedRigidbody;
-            if (rb != null)
-            {
-                return rb;
-            }
-        }
-
-        
-        return null;
+        return closestObject;
     }
 
-
-
-    private void ApplyKnockback(Rigidbody2D target)
-    {
-        if (target == null) return; 
-
-        Vector2 direction = new Vector2((int)Direction, 1).normalized * SwingKnockback;
-        target.AddForce(direction, ForceMode2D.Impulse);
-    }
 }

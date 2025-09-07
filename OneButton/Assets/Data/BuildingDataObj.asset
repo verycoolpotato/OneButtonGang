@@ -13,7 +13,4 @@ MonoBehaviour:
   m_Name: BuildingDataObj
   m_EditorClassIdentifier: 
   Sprites:
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 21300000, guid: 4fdd9b6e7e4996341888a04ad09ea6f6, type: 3}
