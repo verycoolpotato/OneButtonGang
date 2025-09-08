@@ -176,10 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d3d261b859b248ba7b5f637ffcaec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2
+  Health: 1
   Data: {fileID: 11400000, guid: bc5a3efaaadd80e4d9464042f625dd89, type: 2}
   ThisSpriteRenderer: {fileID: 4542409491791872170}
-  HasPlatform: 1
+  HasPlatform: 0
   ActiveSpriteNumber: 0
   ActiveSprite: {fileID: 21300000, guid: 4fdd9b6e7e4996341888a04ad09ea6f6, type: 3}
 --- !u!1 &6382521775285115606
@@ -193,6 +193,7 @@ GameObject:
   - component: {fileID: 6003679346793726197}
   - component: {fileID: 6341420919253153606}
   - component: {fileID: 1588663498479899092}
+  - component: {fileID: 2149782305043546125}
   m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
@@ -258,7 +259,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -301,7 +302,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.37244108}
@@ -316,3 +317,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.25511783}
   m_EdgeRadius: 0
+--- !u!251 &2149782305043546125
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6382521775285115606}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
