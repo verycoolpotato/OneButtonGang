@@ -179,7 +179,7 @@ MonoBehaviour:
   Health: 1
   Data: {fileID: 11400000, guid: bc5a3efaaadd80e4d9464042f625dd89, type: 2}
   ThisSpriteRenderer: {fileID: 4542409491791872170}
-  HasPlatform: 1
+  HasPlatform: 0
   ActiveSpriteNumber: 0
   ActiveSprite: {fileID: 21300000, guid: 4fdd9b6e7e4996341888a04ad09ea6f6, type: 3}
 --- !u!1 &6382521775285115606
@@ -259,7 +259,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
