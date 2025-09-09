@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f986a14d5357bc1448bc8eadd02ceb48
+guid: 36f6d86edafd91546b556e31012e922b
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 31
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638929508732696519
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Building2
+  - name: OB1_Windows
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 4
       width: 32
       height: 32
-    spriteID: 037c69fec66062147b70190b79cc9f7c
+    spriteID: 307cfb18478350543a9ff839c20a23f8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,17 +148,17 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1660445232
+      value0: 2785771048
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Building2
+    name: OB1_Windows
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Building2
+    - name: OB1_Windows
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -166,7 +166,7 @@ ScriptedImporter:
         y: 0
         width: 32
         height: 32
-      spriteId: 037c69fec66062147b70190b79cc9f7c
+      spriteId: 307cfb18478350543a9ff839c20a23f8
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -174,30 +174,6 @@ ScriptedImporter:
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0

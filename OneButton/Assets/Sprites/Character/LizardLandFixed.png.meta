@@ -1,85 +1,25 @@
 fileFormatVersion: 2
-guid: 991a591ad38b9c944a67595a7b07a906
+guid: d3630f9b19278d446b954747c0068227
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1263083108155104869
-    second: LizardJump_0
+      213: 4145390619823430972
+    second: LizardLandFixed_0
   - first:
-      213: -6145026709759492372
-    second: LizardJump_1
+      213: 3778536783793242344
+    second: LizardLandFixed_1
   - first:
-      213: -1033913762714566242
-    second: LizardJump_2
+      213: 276891584210023719
+    second: LizardLandFixed_2
   - first:
-      213: -6605606108049452832
-    second: LizardJump_3
+      213: 4732893356802128571
+    second: LizardLandFixed_3
   - first:
-      213: -7987990309993694083
-    second: LizardJump_4
+      213: 3751818826968264230
+    second: LizardLandFixed_4
   - first:
-      213: -8180088421650250633
-    second: LizardJump_5
-  - first:
-      213: -2748731742034540425
-    second: LizardJump_6
-  - first:
-      213: 1802291269056648353
-    second: LizardJump_7
-  - first:
-      213: 16494121596125844
-    second: LizardJump_8
-  - first:
-      213: 969462644879041589
-    second: LizardJump_9
-  - first:
-      213: -7467921530487302098
-    second: LizardJump_10
-  - first:
-      213: -6906558088316135765
-    second: LizardJump_11
-  - first:
-      213: 1927488563937382763
-    second: LizardJump_12
-  - first:
-      213: -1056373361119196941
-    second: LizardJump_13
-  - first:
-      213: 3440467009583749421
-    second: LizardJump_14
-  - first:
-      213: -1384147007454885944
-    second: LizardJump_15
-  - first:
-      213: -1766321265027957546
-    second: LizardJump_16
-  - first:
-      213: 5247343523402045879
-    second: LizardJump_17
-  - first:
-      213: 1973549328984672252
-    second: LizardJump_18
-  - first:
-      213: 8242426497160305695
-    second: LizardJump_19
-  - first:
-      213: -3828962216783664867
-    second: LizardJump_20
-  - first:
-      213: -8619745110117336268
-    second: LizardJump_21
-  - first:
-      213: -5912084649878794568
-    second: LizardJump_22
-  - first:
-      213: 4772291047130666126
-    second: LizardJump_23
-  - first:
-      213: -3949967415279988006
-    second: LizardJump_24
-  - first:
-      213: -7478109279019706264
-    second: LizardJump_25
+      213: 3806836763290547337
+    second: LizardLandFixed_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -175,133 +115,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LizardInAir_20
+      name: LizardLandFixed_0
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 32
-        height: 48
+        x: 2
+        y: 18
+        width: 30
+        height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 24bb7cdf6dc931d41943d03cbd2bbe35
-      internalID: 1709223538
+      spriteID: c3ddfc53ec2678930800000000000000
+      internalID: 4145390619823430972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LizardInAir_21
+      name: LizardLandFixed_1
       rect:
         serializedVersion: 2
-        x: 672
-        y: 0
-        width: 32
-        height: 48
+        x: 32
+        y: 5
+        width: 33
+        height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1cd2061316c195e4391e34da623c03e1
-      internalID: 1738038085
+      spriteID: 8e04eb07f2f007430800000000000000
+      internalID: 3778536783793242344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LizardInAir_22
+      name: LizardLandFixed_2
       rect:
         serializedVersion: 2
-        x: 704
-        y: 0
-        width: 32
-        height: 48
+        x: 64
+        y: 4
+        width: 33
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b4b8b35d757ab84458da552055b62e1b
-      internalID: 1792967244
+      spriteID: 7253226cd67b7d300800000000000000
+      internalID: 276891584210023719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LizardInAir_23
+      name: LizardLandFixed_3
       rect:
         serializedVersion: 2
-        x: 736
+        x: 96
         y: 0
-        width: 32
-        height: 48
+        width: 33
+        height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 12d7beb69ac66ab4eb388de1a294f80c
-      internalID: 1947188136
+      spriteID: bba3ffb9e6d9ea140800000000000000
+      internalID: 4732893356802128571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LizardInAir_24
+      name: LizardLandFixed_4
       rect:
         serializedVersion: 2
-        x: 768
+        x: 128
         y: 0
-        width: 32
-        height: 48
+        width: 33
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c973d54d4dcdd6a409b739f55400d171
-      internalID: -925804307
+      spriteID: 62ee01b5853211430800000000000000
+      internalID: 3751818826968264230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LizardInAir_25
+      name: LizardLandFixed_5
       rect:
         serializedVersion: 2
-        x: 800
+        x: 159
         y: 0
-        width: 32
-        height: 48
+        width: 33
+        height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 68cb5aec9436d4143af8ef81cd44bfe5
-      internalID: 1815226948
+      spriteID: 984b4d1edd994d430800000000000000
+      internalID: 3806836763290547337
       vertices: []
       indices: 
       edges: []
@@ -310,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eb4e0b3078ba74b4380037891c28de49
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -320,34 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LizardInAir_0: -511649825
-      LizardInAir_1: -789678103
-      LizardInAir_10: 2119788786
-      LizardInAir_11: -1732770319
-      LizardInAir_12: -473754225
-      LizardInAir_13: -412217291
-      LizardInAir_14: 1964720457
-      LizardInAir_15: 52528528
-      LizardInAir_16: 1915052581
-      LizardInAir_17: 1932357371
-      LizardInAir_18: -576089807
-      LizardInAir_19: -488138453
-      LizardInAir_2: -545802886
-      LizardInAir_20: 1709223538
-      LizardInAir_21: 1738038085
-      LizardInAir_22: 1792967244
-      LizardInAir_23: 1947188136
-      LizardInAir_24: -925804307
-      LizardInAir_25: 1815226948
-      LizardInAir_26: -1525052408
-      LizardInAir_27: 1487073329
-      LizardInAir_3: 2008944424
-      LizardInAir_4: -239161353
-      LizardInAir_5: -1445776496
-      LizardInAir_6: 1890245757
-      LizardInAir_7: 1346003044
-      LizardInAir_8: 742202104
-      LizardInAir_9: -916793667
+      LizardLandFixed_0: 4145390619823430972
+      LizardLandFixed_1: 3778536783793242344
+      LizardLandFixed_2: 276891584210023719
+      LizardLandFixed_3: 4732893356802128571
+      LizardLandFixed_4: 3751818826968264230
+      LizardLandFixed_5: 3806836763290547337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

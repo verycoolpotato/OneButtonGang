@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36d40fb9d7625ba4fae42d9c569a04ec
+guid: 07170fb5bcd634e49b55160407fa81bc
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 31
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638929508884691372
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Building3
+  - name: Concrete2
     originalName: 
-    pivot: {x: 0.5, y: -4.3333335}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -134,8 +134,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 32
-      height: 6
-    spriteID: 758ea91f08a4e91458010c7abdbf4681
+      height: 32
+    spriteID: cbcf221916d908f438bb972cdb044b7a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,25 +148,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1660445233
+      value0: 3420527881
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Building3
+    name: Concrete2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Building3
+    - name: Concrete2
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 26
+        y: 0
         width: 32
-        height: 6
-      spriteId: 758ea91f08a4e91458010c7abdbf4681
+        height: 32
+      spriteId: cbcf221916d908f438bb972cdb044b7a
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -182,32 +182,8 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
-  previousTextureSize: {x: 64, y: 16}
+  previousTextureSize: {x: 64, y: 64}

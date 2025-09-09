@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 860bbe35ee61a804d93de81a3055342e
+guid: dab3bdc54bd2aca499119d0fab9498b7
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Concrete2
+  - name: OB1_SepticTank1
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -134,8 +134,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 32
-      height: 32
-    spriteID: 5b1ffc99eb6175b4fbfdf7f86fbe54a1
+      height: 31
+    spriteID: 4d81909f7adbf7e42adb82c4178ff9e8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,25 +148,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3420527881
+      value0: 1759867226
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Concrete2
+    name: OB1_SepticTank1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Concrete2
+    - name: OB1_SepticTank1
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 32
-        height: 32
-      spriteId: 5b1ffc99eb6175b4fbfdf7f86fbe54a1
+        height: 31
+      spriteId: 4d81909f7adbf7e42adb82c4178ff9e8
     linkedCells: []
     parentIndex: -1
   platformSettings:
