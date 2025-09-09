@@ -11,27 +11,26 @@ public class PlayerDestruction : MonoBehaviour
     public void ApplyKnockback(GameObject target, int directionX, float knockback)
     {
         if (target == null) return;
+        if (!target.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb)) return;
 
-        Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
-        if (rb == null) return;
-
-        // Diagonal direction: equal x and y
-        Vector2 diagonal = new Vector2(directionX, 1).normalized; // normalized ensures equal magnitude
+        Vector2 diagonal = new Vector2(directionX, 1).normalized;
         Vector2 force = diagonal * knockback;
 
         rb.AddForce(force, ForceMode2D.Impulse);
     }
-
-
-
-
-
     public void DealDamage(GameObject target)
     {
-        Destructible destructible = target.GetComponent<Destructible>();
-        if (destructible != null)
+        if (target == null) return;
 
-            destructible.health--;
+        if (CanDamage(target))
+        {
+            Destructible destructible = target.GetComponent<Destructible>();
+            if (destructible != null)
+            {
+                destructible.health--; // safe if health is int/float
+            }
+        }
+        
     }
 
     //checks if this object can be damaged, objects can not be damaged repeatedly

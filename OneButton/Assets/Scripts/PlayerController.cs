@@ -26,15 +26,20 @@ public class PlayerController : PlayerDestruction
     [Tooltip("What layers are Breakble?")]
     [SerializeField] LayerMask BreakableLayers;
 
+    [SerializeField] private float SlamRadius;
+
     private int _jumps = 2;
 
     //For input timings
     private float _heldTime = 0;
     private bool _startHold = false;
+
+    
     private bool _canMove = true;
     private float _defaultGravity;
     private float _defaultMoveSpeed;
 
+   
     private void FixedUpdate()
     {
         AutoRun((int)Direction);
@@ -59,7 +64,7 @@ public class PlayerController : PlayerDestruction
             MovementSpeed = _defaultMoveSpeed - (_defaultMoveSpeed - minSpeed) * Mathf.Clamp01(_heldTime / rampTime);
 
         }
-        
+       
 
     }
 
@@ -162,11 +167,28 @@ public class PlayerController : PlayerDestruction
 
         Rb.gravityScale = _defaultGravity;
 
-        // Slam down
         Rb.AddForce(Vector2.down * 30, ForceMode2D.Impulse);
+
+        
 
         // Wait until grounded
         yield return new WaitUntil(() => Grounded());
+
+      
+
+        //Knockback applied on landed
+        GameObject[] targets = GetAllObjects(Vector2.down, SlamRadius);
+
+        for (int i = 0; i < targets.Length; i++)
+        {
+            if (targets[i] != null) 
+            {
+                DealDamage(targets[i]);
+                ApplyKnockback(targets[i], 0, 500);
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f);
 
         _canMove = true;
     }
@@ -193,5 +215,18 @@ public class PlayerController : PlayerDestruction
 
         return closestObject;
     }
+    private GameObject[] GetAllObjects(Vector2 offset, float radius)
+    {
+        Vector2 circlePos = (Vector2)transform.position + offset;
 
+        Collider2D[] hits = Physics2D.OverlapCircleAll(circlePos, radius, BreakableLayers);
+
+        GameObject[] objects = new GameObject[hits.Length];
+        for (int i = 0; i < hits.Length; i++)
+        {
+            objects[i] = hits[i].gameObject;
+        }
+
+        return objects;
+    }
 }

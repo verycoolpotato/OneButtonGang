@@ -108,6 +108,7 @@ MonoBehaviour:
   MovementSpeed: 5
   JumpHeight: 15
   SwingKnockback: 1000
+  PlayerAnimator: {fileID: 8807024351375341725}
   Direction: 1
   GroundedLayers:
     serializedVersion: 2
@@ -115,6 +116,7 @@ MonoBehaviour:
   BreakableLayers:
     serializedVersion: 2
     m_Bits: 128
+  SlamRadius: 0
 --- !u!50 &3197738913940170636
 Rigidbody2D:
   serializedVersion: 5
