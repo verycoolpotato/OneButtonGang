@@ -183,8 +183,9 @@ public class PlayerController : PlayerDestruction
         {
             if (targets[i] != null) 
             {
-                DealDamage(targets[i]);
                 ApplyKnockback(targets[i], 0, 500);
+                DealDamage(targets[i]);
+                
             }
         }
 
