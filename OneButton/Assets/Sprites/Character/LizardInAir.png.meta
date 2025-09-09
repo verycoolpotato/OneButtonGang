@@ -1,0 +1,401 @@
+fileFormatVersion: 2
+guid: 7b77a5235ee7dc144bc65dbb2be89115
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1263083108155104869
+    second: LizardJump_0
+  - first:
+      213: -6145026709759492372
+    second: LizardJump_1
+  - first:
+      213: -1033913762714566242
+    second: LizardJump_2
+  - first:
+      213: -6605606108049452832
+    second: LizardJump_3
+  - first:
+      213: -7987990309993694083
+    second: LizardJump_4
+  - first:
+      213: -8180088421650250633
+    second: LizardJump_5
+  - first:
+      213: -2748731742034540425
+    second: LizardJump_6
+  - first:
+      213: 1802291269056648353
+    second: LizardJump_7
+  - first:
+      213: 16494121596125844
+    second: LizardJump_8
+  - first:
+      213: 969462644879041589
+    second: LizardJump_9
+  - first:
+      213: -7467921530487302098
+    second: LizardJump_10
+  - first:
+      213: -6906558088316135765
+    second: LizardJump_11
+  - first:
+      213: 1927488563937382763
+    second: LizardJump_12
+  - first:
+      213: -1056373361119196941
+    second: LizardJump_13
+  - first:
+      213: 3440467009583749421
+    second: LizardJump_14
+  - first:
+      213: -1384147007454885944
+    second: LizardJump_15
+  - first:
+      213: -1766321265027957546
+    second: LizardJump_16
+  - first:
+      213: 5247343523402045879
+    second: LizardJump_17
+  - first:
+      213: 1973549328984672252
+    second: LizardJump_18
+  - first:
+      213: 8242426497160305695
+    second: LizardJump_19
+  - first:
+      213: -3828962216783664867
+    second: LizardJump_20
+  - first:
+      213: -8619745110117336268
+    second: LizardJump_21
+  - first:
+      213: -5912084649878794568
+    second: LizardJump_22
+  - first:
+      213: 4772291047130666126
+    second: LizardJump_23
+  - first:
+      213: -3949967415279988006
+    second: LizardJump_24
+  - first:
+      213: -7478109279019706264
+    second: LizardJump_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LizardInAir_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1561da21c97c40c4eb592aa98923d023
+      internalID: -473754225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LizardInAir_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8345eeac9f0f7a42a8f16ba2c3491c5
+      internalID: -412217291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LizardInAir_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c146c43ef2441e4199ed27c4e53488e
+      internalID: 1964720457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LizardInAir_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e89f66b966e2a14f97b9aff12db29ed
+      internalID: 52528528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LizardInAir_16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d407369c0a4627f4fa25fa4d7766007c
+      internalID: 1915052581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LizardInAir_17
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8dbe170e64570d4c98dffdcf6488829
+      internalID: 1932357371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LizardInAir_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf54d8ecbc60e94cb4a19a0e7ee0af3
+      internalID: -576089807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LizardInAir_19
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac89b05aaaa4d44419cc589ae25bb707
+      internalID: -488138453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: eb4e0b3078ba74b4380037891c28de49
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LizardInAir_0: -511649825
+      LizardInAir_1: -789678103
+      LizardInAir_10: 2119788786
+      LizardInAir_11: -1732770319
+      LizardInAir_12: -473754225
+      LizardInAir_13: -412217291
+      LizardInAir_14: 1964720457
+      LizardInAir_15: 52528528
+      LizardInAir_16: 1915052581
+      LizardInAir_17: 1932357371
+      LizardInAir_18: -576089807
+      LizardInAir_19: -488138453
+      LizardInAir_2: -545802886
+      LizardInAir_20: 1709223538
+      LizardInAir_21: 1738038085
+      LizardInAir_22: 1792967244
+      LizardInAir_23: 1947188136
+      LizardInAir_24: -925804307
+      LizardInAir_25: 1815226948
+      LizardInAir_26: -1525052408
+      LizardInAir_27: 1487073329
+      LizardInAir_28: 1746719243
+      LizardInAir_29: -733646073
+      LizardInAir_3: 2008944424
+      LizardInAir_4: -239161353
+      LizardInAir_5: -1445776496
+      LizardInAir_6: 1890245757
+      LizardInAir_7: 1346003044
+      LizardInAir_8: 742202104
+      LizardInAir_9: -916793667
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

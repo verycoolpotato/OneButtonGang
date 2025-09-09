@@ -13,7 +13,8 @@ public class PlayerController : PlayerDestruction
     [Tooltip("Launches diagonally")]
     [SerializeField] private float SwingKnockback;
 
-
+    [Tooltip("This Animator")]
+    [SerializeField] Animator PlayerAnimator;
     public enum Directions { Left = -1, Right = 1 };
 
     [Tooltip("The direction of movement")]
@@ -62,6 +63,14 @@ public class PlayerController : PlayerDestruction
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (Grounded())
+        {
+            PlayerAnimator.SetBool("Jump", false);
+        }
+    }
+
     //Automatic Movement
     private void AutoRun(int direction)
     {
@@ -83,6 +92,7 @@ public class PlayerController : PlayerDestruction
     {
         if (_jumps > 0)
         {
+            PlayerAnimator.SetBool("Jump", true);
             Rb.linearVelocity = Vector2.zero;
             Rb.AddForce(new Vector2(0, JumpHeight), ForceMode2D.Impulse);
 
