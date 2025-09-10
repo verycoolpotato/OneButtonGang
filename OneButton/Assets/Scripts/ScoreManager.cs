@@ -43,5 +43,9 @@ public class ScoreManager : MonoBehaviour
         Score += score;
     }
    
+    public void SaveScore()
+    {
+        //Save score locally
+    }
 }
 
