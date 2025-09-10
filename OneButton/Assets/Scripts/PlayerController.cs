@@ -58,7 +58,7 @@ public class PlayerController : PlayerDestruction
         }
         if (_heldTime > 0.1f)
         {
-            PlayerAnimator.SetBool("Charging", true);
+            
             float rampTime = 0.7f;
             float minSpeed = 3f;
 
@@ -122,7 +122,7 @@ public class PlayerController : PlayerDestruction
         if (context.performed) //pressed
         {
             _startHold = true;
-            
+            PlayerAnimator.SetBool("Charging", true);
         }
         else if (context.canceled) //released
         {
