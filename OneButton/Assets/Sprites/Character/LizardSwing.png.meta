@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: ff5ca78483919cb4ca9365eda44db02e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1574866264308104178
+    second: LizardSwing_0
+  - first:
+      213: -8580611847579970291
+    second: LizardSwing_1
+  - first:
+      213: 8623356547571607869
+    second: LizardSwing_2
+  - first:
+      213: -8094661309516769337
+    second: LizardSwing_3
+  - first:
+      213: -7755049978219904618
+    second: LizardSwing_4
+  - first:
+      213: -3933112106640356331
+    second: LizardSwing_5
+  - first:
+      213: -6195148909180444005
+    second: LizardSwing_6
+  - first:
+      213: 4941905439681520517
+    second: LizardSwing_7
+  - first:
+      213: 5182610504892250260
+    second: LizardSwing_8
+  - first:
+      213: -5497253824749417536
+    second: LizardSwing_9
+  - first:
+      213: 6459725698049447370
+    second: LizardSwing_10
+  - first:
+      213: 7376226573145147891
+    second: LizardSwing_11
+  - first:
+      213: 8416152718413689198
+    second: LizardSwing_12
+  - first:
+      213: -6589922154101371319
+    second: LizardSwing_13
+  - first:
+      213: -4239047362990469017
+    second: LizardSwing_14
+  - first:
+      213: 7055121683200286287
+    second: LizardSwing_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 25
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LizardSwing_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e8f4b37b4eb84a0800000000000000
+      internalID: -6589922154101371319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LizardSwing_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76095eef1e0eb25c0800000000000000
+      internalID: -4239047362990469017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: cf54909182e26604f973288e79568c2f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LizardSwing_0: -1574866264308104178
+      LizardSwing_1: -8580611847579970291
+      LizardSwing_10: 6459725698049447370
+      LizardSwing_11: 7376226573145147891
+      LizardSwing_12: 8416152718413689198
+      LizardSwing_13: -6589922154101371319
+      LizardSwing_14: -4239047362990469017
+      LizardSwing_2: 8623356547571607869
+      LizardSwing_3: -8094661309516769337
+      LizardSwing_4: -7755049978219904618
+      LizardSwing_5: -3933112106640356331
+      LizardSwing_6: -6195148909180444005
+      LizardSwing_7: 4941905439681520517
+      LizardSwing_8: 5182610504892250260
+      LizardSwing_9: -5497253824749417536
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

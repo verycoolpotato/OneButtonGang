@@ -58,6 +58,7 @@ public class PlayerController : PlayerDestruction
         }
         if (_heldTime > 0.1f)
         {
+            PlayerAnimator.SetBool("Charging", true);
             float rampTime = 0.7f;
             float minSpeed = 3f;
 
@@ -121,9 +122,11 @@ public class PlayerController : PlayerDestruction
         if (context.performed) //pressed
         {
             _startHold = true;
+            
         }
         else if (context.canceled) //released
         {
+            PlayerAnimator.SetBool("Charging", false);
             MovementSpeed = _defaultMoveSpeed;
             CheckInputType(_heldTime);
             _startHold = false;
@@ -147,7 +150,7 @@ public class PlayerController : PlayerDestruction
         else if (time > 1 && Grounded())
         {
            GameObject target =  GetClosestObject(Vector2.right * (int)Direction, 0.5f);
-
+            PlayerAnimator.SetTrigger("Swing");
             ApplyKnockback(target, (int)Direction,SwingKnockback);
         }
     }
