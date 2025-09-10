@@ -27,7 +27,7 @@ public class PlayerDestruction : MonoBehaviour
             Destructible destructible = target.GetComponent<Destructible>();
             if (destructible != null)
             {
-                destructible.health--; // safe if health is int/float
+                destructible.health--; 
             }
         }
         

@@ -3,6 +3,8 @@ using UnityEngine;
 public class Destructible : MonoBehaviour
 {
     [SerializeField] private int Health;
+    [SerializeField] private int ScoreOnDestroyed;
+    [SerializeField] private int ScoreOnDamaged;
 
     private int _maxHealth;
 
@@ -26,13 +28,11 @@ public class Destructible : MonoBehaviour
         if (health <= 0)
             Break();
         else if (health > 0 && health <= _maxHealth * 0.5f)
-            Damage();
+            ScoreManager.Instance.AddScore(ScoreOnDamaged);
     }
 
-    private void Damage()
-    {
-
-    }
+    
+    
     private void Break()
     {
         Destroy(gameObject);

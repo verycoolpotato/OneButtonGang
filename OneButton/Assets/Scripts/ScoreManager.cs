@@ -7,15 +7,21 @@ public class ScoreManager : MonoBehaviour
     private List<Destructible> _totalDestructibles;
     private float _invTotalDestructibles;
 
-    public static ScoreManager instance;
+    public int Score;
+
+    public static ScoreManager Instance;
 
     private void SingletonSetup()
     {
-
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(this);
     }
 
     private void Awake()
     {
+        SingletonSetup();
         _totalDestructibles = new List<Destructible>(
             Object.FindObjectsByType<Destructible>(FindObjectsSortMode.None));
 
@@ -32,7 +38,10 @@ public class ScoreManager : MonoBehaviour
 
         return destructionPercentage; 
     }
-
+    public void AddScore(int score)
+    {
+        Score += score;
+    }
    
 }
 
