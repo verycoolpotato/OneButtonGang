@@ -4,10 +4,6 @@ public class PlayerDestruction : MonoBehaviour
 {
 
 
-
-
-
-
     public void ApplyKnockback(GameObject target, int directionX, float knockback)
     {
         if (target == null) return;
