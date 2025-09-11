@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerController : PlayerDestruction
+public class PlayerController : ApplyDestruction
 {
     [SerializeField] private Rigidbody2D Rb;
     [SerializeField] private float MovementSpeed;
@@ -65,8 +65,6 @@ public class PlayerController : PlayerDestruction
             MovementSpeed = _defaultMoveSpeed - (_defaultMoveSpeed - minSpeed) * Mathf.Clamp01(_heldTime / rampTime);
 
         }
-       
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -109,7 +107,7 @@ public class PlayerController : PlayerDestruction
     //check if on ground, returns whether grounded or not
     private bool Grounded()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.2f, Vector2.down, 0.75f, GroundedLayers);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.3f, Vector2.down, 0.75f, GroundedLayers);
         bool isGrounded = hit.collider != null;
 
         return isGrounded;
@@ -149,9 +147,18 @@ public class PlayerController : PlayerDestruction
         }
         else if (time > 1 && Grounded())
         {
-           GameObject target =  GetClosestObject(Vector2.right * (int)Direction, 0.5f);
+           GameObject[] targets =  GetAllObjects(Vector2.right * (int)Direction, 1f);
             PlayerAnimator.SetTrigger("Swing");
-            ApplyKnockback(target, (int)Direction,SwingKnockback);
+            for (int i = 0; i < targets.Length; i++)
+            {
+                if (targets[i] != null)
+                {
+                    DealDamage(targets[i]);
+                    ApplyKnockback(targets[i], (int)Direction, SwingKnockback);
+
+                }
+            }
+            
         }
     }
 

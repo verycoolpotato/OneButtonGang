@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5579535490204218462}
   - component: {fileID: 4542409491791872170}
-  - component: {fileID: 621868705701296965}
   - component: {fileID: 3485236328856966500}
   - component: {fileID: 8326282226672023940}
+  - component: {fileID: 2047640282159373954}
   m_Layer: 7
   m_Name: BuildingCube
   m_TagString: Untagged
@@ -91,33 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &621868705701296965
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3755531437673912446}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 10
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &3485236328856966500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +106,7 @@ MonoBehaviour:
   Health: 1
   ScoreOnDestroyed: 0
   ScoreOnDamaged: 0
+  Sprite: {fileID: 4542409491791872170}
   HasPlatform: 0
 --- !u!61 &8326282226672023940
 BoxCollider2D:
@@ -180,6 +154,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &2047640282159373954
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3755531437673912446}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6382521775285115606
 GameObject:
   m_ObjectHideFlags: 0

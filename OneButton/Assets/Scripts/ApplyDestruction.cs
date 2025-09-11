@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class PlayerDestruction : MonoBehaviour
+public class ApplyDestruction : MonoBehaviour
 {
-
-
     public void ApplyKnockback(GameObject target, int directionX, float knockback)
     {
         if (target == null) return;
@@ -30,7 +28,6 @@ public class PlayerDestruction : MonoBehaviour
     }
 
     //checks if this object can be damaged, objects can not be damaged repeatedly
-
     GameObject lastHit = null;
     public GameObject CanDamage(GameObject hit)
     {
