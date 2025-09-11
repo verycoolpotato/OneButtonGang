@@ -8,7 +8,7 @@ public class Destructible : MonoBehaviour
     [SerializeField] private int ScoreOnDamaged;
     [SerializeField] private SpriteRenderer Sprite;
     private int _maxHealth;
-
+    private bool _isProjectile = false; 
     private void Start()
     {
         _maxHealth = Health;
@@ -43,10 +43,17 @@ public class Destructible : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
 
+        _isProjectile = true;
         gameObject.layer = 7;
     }
-    
-    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 7 && _isProjectile)
+        {
+            health--;
+        }
+    }
     private void Break()
     {
         ScoreManager.Instance.AddScore(ScoreOnDestroyed);
