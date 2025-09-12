@@ -91,7 +91,7 @@ public class Destructible : MonoBehaviour
         {
             GameObject smokeGO = Instantiate(SmokePrefab, transform.position, Quaternion.identity);
            
-            Destroy(smokeGO, 4);
+            //Destroy(smokeGO, 4);
         }
 
         Destroy(gameObject);
