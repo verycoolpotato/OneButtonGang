@@ -256,7 +256,7 @@ MonoBehaviour:
   BreakableLayers:
     serializedVersion: 2
     m_Bits: 128
-  SlamRadius: 3
+  SlamRadius: 1
 --- !u!50 &7572054242043852398
 Rigidbody2D:
   serializedVersion: 5

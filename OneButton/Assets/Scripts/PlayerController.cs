@@ -34,11 +34,13 @@ public class PlayerController : ApplyDestruction
     private float _heldTime = 0;
     private bool _startHold = false;
 
+
+    private float _slamKnockback;
     
     private bool _canMove = true;
     private float _defaultGravity;
     private float _defaultMoveSpeed;
-
+    private float _slamCooldown;
    
     private void FixedUpdate()
     {
@@ -51,26 +53,39 @@ public class PlayerController : ApplyDestruction
     }
     private void Update()
     {
-        //Times input
+        Timers();
+       
+    }
+    private void Timers()
+    {
+        if (!Grounded())
+        {
+            _slamKnockback += 1f;
+        }
+        if (_slamCooldown > 0)
+        {
+            _slamCooldown -= Time.deltaTime;
+        }
+
         if (_startHold)
         {
             _heldTime += Time.deltaTime;
         }
         if (_heldTime > 0.1f)
         {
-            
-            float rampTime = 0.7f;
+
+            float rampTime = 0.6f;
             float minSpeed = 3f;
 
             MovementSpeed = _defaultMoveSpeed - (_defaultMoveSpeed - minSpeed) * Mathf.Clamp01(_heldTime / rampTime);
 
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (Grounded())
         {
+            _slamKnockback = 0;
             PlayerAnimator.SetBool("Jump", false);
         }
     }
@@ -142,30 +157,28 @@ public class PlayerController : ApplyDestruction
         {
             if (_jumps > 0)
                 Jump();
-            else
-                StartCoroutine(GroundSlam());
-        }
-        else if (time > 1 && Grounded())
-        {
-           GameObject[] targets =  GetAllObjects(Vector2.right * (int)Direction, 1f);
-            PlayerAnimator.SetTrigger("Swing");
-            for (int i = 0; i < targets.Length; i++)
+            else if (_slamCooldown <= 0)
             {
-                if (targets[i] != null)
-                {
-                    DealDamage(targets[i]);
-                    ApplyKnockback(targets[i], (int)Direction, SwingKnockback);
-
-                }
+                Debug.Log(_slamKnockback);
+                StartCoroutine(GroundSlam(_slamKnockback));
             }
-            
+               
+        }
+        else if (time > 0.7f && Grounded())
+        {
+           GameObject target =  GetClosestObject(Vector2.right * (int)Direction, 1f);
+            PlayerAnimator.SetTrigger("Swing");
+            DealDamage(target);
+            ApplyKnockback(target, (int)Direction, SwingKnockback);
+
         }
     }
 
-    //Checks for gameobjects directly overlapping with this gameobject
+    
 
-    IEnumerator GroundSlam()
+    IEnumerator GroundSlam(float slamKB)
     {
+        _slamCooldown = 1.5f;
         _canMove = false;
 
         // Stop motion and ensure gravity
@@ -184,7 +197,7 @@ public class PlayerController : ApplyDestruction
         // Wait until grounded
         yield return new WaitUntil(() => Grounded());
 
-      
+        
 
         //Knockback applied on landed
         GameObject[] targets = GetAllObjects(Vector2.down, SlamRadius);
@@ -193,14 +206,16 @@ public class PlayerController : ApplyDestruction
         {
             if (targets[i] != null) 
             {
-                ApplyKnockback(targets[i], 0, 500);
+
                 DealDamage(targets[i]);
+                ApplyKnockback(targets[i], (int)Direction, slamKB);
+               
                 
             }
         }
 
-        yield return new WaitForSeconds(0.5f);
-
+        yield return new WaitForSeconds(0.2f);
+        
         _canMove = true;
     }
 

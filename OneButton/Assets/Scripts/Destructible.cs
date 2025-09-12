@@ -3,60 +3,98 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour
 {
+    [Header("Stats")]
     [SerializeField] private int Health;
     [SerializeField] private int ScoreOnDestroyed;
     [SerializeField] private int ScoreOnDamaged;
+
+    [Header("References")]
     [SerializeField] private SpriteRenderer Sprite;
+    [SerializeField] private ParticleSystem DamageParticles; 
+    [SerializeField] private GameObject SmokePrefab;
+
+    [SerializeField] Rigidbody2D rb;
+
     private int _maxHealth;
-    private bool _isProjectile = false; 
+    
+
     private void Start()
     {
         _maxHealth = Health;
+       
     }
-    //Run damaged logic on changed
+
+    
     public int health
     {
         get => Health;
         set
         {
+            if (Health == value) return; 
             Health = value;
             Damaged(Health);
-            
         }
     }
 
-    private void Damaged(int health)
+    private void Damaged(int currentHealth)
     {
-        
-        if (health <= 0)
+        if (currentHealth <= 0)
+        {
             Break();
-        else if (health > 0 && health <= _maxHealth * 0.5f)
-          ScoreManager.Instance.AddScore(ScoreOnDamaged);
-
+            return;
+        }
+        else if (currentHealth <= _maxHealth * 0.5f)
+        {
+            ScoreManager.Instance.AddScore(ScoreOnDamaged);
+        }
         StartCoroutine(LayerSwitcher());
-
+      
+        if (currentHealth > 0 && DamageParticles != null)
+        {
+            DamageParticles.Play();
+        }
     }
-    IEnumerator LayerSwitcher()
+
+    private IEnumerator LayerSwitcher()
     {
+        // Set temporary layer and sprite order
         gameObject.layer = 9;
         Sprite.sortingOrder = 3;
 
         yield return new WaitForSeconds(0.3f);
 
-        _isProjectile = true;
+        // After 0.3s, allow collisions
+       
         gameObject.layer = 7;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 7 && _isProjectile)
+        if(rb.linearVelocity.magnitude > 5) 
         {
             health--;
         }
+        if(collision.gameObject.layer == 9)
+        {
+            health--;
+        }
+
     }
+
     private void Break()
     {
+        StopAllCoroutines();
         ScoreManager.Instance.AddScore(ScoreOnDestroyed);
+
+    
+        if (SmokePrefab != null)
+        {
+            GameObject smokeGO = Instantiate(SmokePrefab, transform.position, Quaternion.identity);
+           
+            Destroy(smokeGO, 4);
+        }
+
         Destroy(gameObject);
     }
 }
+

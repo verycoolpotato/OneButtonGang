@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingCubeSettings : Destructible
 {
-   
+    
     
 
     [Tooltip("Does this tile have a platform on it?")]
@@ -21,6 +21,6 @@ public class BuildingCubeSettings : Destructible
         platform.SetActive(HasPlatform);
         
     }
-
     
+
 }
