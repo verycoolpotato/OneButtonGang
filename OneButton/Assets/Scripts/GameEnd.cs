@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -20,7 +21,8 @@ public class GameEnd : MonoBehaviour
     [SerializeField] SpriteRenderer MedalSpriteRenderer;
 
     private ScoreManager scoreManager;
-   
+    
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.name == "Player")
@@ -40,19 +42,19 @@ public class GameEnd : MonoBehaviour
 
             switch (MedalRanking)
             {
-                case < 5000:
+                case < 50000:
                     MedalSpriteRenderer.sprite = MedalSprites[4];
                     break;
-                case >= 5000 and < 15000:
+                case >= 100000 and < 150000:
                     MedalSpriteRenderer.sprite = MedalSprites[3];
                     break;
-                case >= 15000 and < 30000:
+                case >= 150000 and < 200000:
                     MedalSpriteRenderer.sprite = MedalSprites[2];
                     break;
-                case >= 30000 and < 50000:
+                case >= 200000 and < 250000:
                     MedalSpriteRenderer.sprite = MedalSprites[1];
                     break;
-                case >= 50000:
+                case >= 250000:
                     MedalSpriteRenderer.sprite = MedalSprites[0];
                     break;
 
@@ -64,6 +66,8 @@ public class GameEnd : MonoBehaviour
     private void Awake()
     {
         scoreManager = ScoreManager.Instance;
+
+       
     }
 
     //Called by buttons
