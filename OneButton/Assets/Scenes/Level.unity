@@ -17046,7 +17046,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1588663498479899092, guid: 8ad4099e1202a2847a7ddf33d80e26f8, type: 3}
       propertyPath: m_Size.x
-      value: 0.14999643
+      value: 0.27171516
       objectReference: {fileID: 0}
     - target: {fileID: 1588663498479899092, guid: 8ad4099e1202a2847a7ddf33d80e26f8, type: 3}
       propertyPath: m_Size.y
@@ -17054,7 +17054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1588663498479899092, guid: 8ad4099e1202a2847a7ddf33d80e26f8, type: 3}
       propertyPath: m_Offset.x
-      value: 0.039778586
+      value: 0.044713143
       objectReference: {fileID: 0}
     - target: {fileID: 1588663498479899092, guid: 8ad4099e1202a2847a7ddf33d80e26f8, type: 3}
       propertyPath: m_Offset.y
@@ -17074,7 +17074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3485236328856966500, guid: 8ad4099e1202a2847a7ddf33d80e26f8, type: 3}
       propertyPath: HasPlatform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3485236328856966500, guid: 8ad4099e1202a2847a7ddf33d80e26f8, type: 3}
       propertyPath: ScoreOnDamaged
@@ -17142,11 +17142,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6003679346793726197, guid: 8ad4099e1202a2847a7ddf33d80e26f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0046
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 6003679346793726197, guid: 8ad4099e1202a2847a7ddf33d80e26f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3785
+      value: 4.18
       objectReference: {fileID: 0}
     - target: {fileID: 6341420919253153606, guid: 8ad4099e1202a2847a7ddf33d80e26f8, type: 3}
       propertyPath: m_Sprite
