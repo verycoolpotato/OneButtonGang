@@ -166,7 +166,7 @@ public class PlayerController : ApplyDestruction
                 Jump();
             else if (_slamCooldown <= 0)
             {
-                Debug.Log(_slamKnockback);
+                
                 StartCoroutine(GroundSlam(_slamKnockback));
             }
                

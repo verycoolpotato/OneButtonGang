@@ -9,5 +9,9 @@ public class MenuFunctionality : MonoBehaviour
         SceneManager.LoadScene(LevelName);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
 }
