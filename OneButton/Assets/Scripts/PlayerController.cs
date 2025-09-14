@@ -30,6 +30,8 @@ public class PlayerController : ApplyDestruction
 
     [SerializeField] private SpriteRenderer ThisSpriteRenderer;
 
+    [SerializeField] private CapsuleCollider2D PlayerCollider;
+
     private int _jumps = 2;
 
     //For input timings
@@ -92,6 +94,7 @@ public class PlayerController : ApplyDestruction
         {
             _slamKnockback = 0;
             PlayerAnimator.SetBool("Jump", false);
+            PlayerCollider.size = new Vector2(PlayerCollider.size.x, 1.3f);
         }
     }
 
@@ -118,6 +121,7 @@ public class PlayerController : ApplyDestruction
     {
         if (_jumps > 0)
         {
+            PlayerCollider.size = new Vector2(PlayerCollider.size.x, 0.3f);
             PlayerAnimator.SetBool("Jump", true);
             Rb.linearVelocity = Vector2.zero;
             Rb.AddForce(new Vector2(0, JumpHeight), ForceMode2D.Impulse);
@@ -177,7 +181,7 @@ public class PlayerController : ApplyDestruction
             PlayerAnimator.SetTrigger("Swing");
             DealDamage(target);
             ApplyKnockback(target, (int)Direction, SwingKnockback);
-
+           
         }
     }
 
@@ -185,6 +189,7 @@ public class PlayerController : ApplyDestruction
 
     IEnumerator GroundSlam(float slamKB)
     {
+         
         _slamCooldown = 1.5f;
         _canMove = false;
 

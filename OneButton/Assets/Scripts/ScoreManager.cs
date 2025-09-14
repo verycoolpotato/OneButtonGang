@@ -65,14 +65,18 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateScore(int addedscore)
     {
-        if (addedscore > 50)
+        if (addedscore > 30 && addedscore < 50)
         {
             StartCoroutine(AnimateText(Color.green));
+        }
+        else if(addedscore >= 50)
+        {
+            StartCoroutine(AnimateText(Color.red));
+
         }
         else
         {
             StartCoroutine(AnimateText(Color.yellow));
-
         }
             InGameScoreText.text = Score.ToString();
     }
@@ -80,7 +84,7 @@ public class ScoreManager : MonoBehaviour
     IEnumerator AnimateText(Color color)
     {
         InGameScoreText.color =  color;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         InGameScoreText.color = Color.white;
 
     }
