@@ -1,5 +1,7 @@
 
 using System.Collections.Generic;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
@@ -10,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     private int Score;
 
     public static ScoreManager Instance;
-
+    [SerializeField] private TextMeshProUGUI InGameScoreText;
     private void SingletonSetup()
     {
         if (Instance == null)
@@ -48,6 +50,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int score)
     {
         Score += score;
+        UpdateScore(score);
     }
    
     public void SaveScore()
@@ -58,6 +61,28 @@ public class ScoreManager : MonoBehaviour
     public int GetScore()
     {
         return Score;
+    }
+
+    private void UpdateScore(int addedscore)
+    {
+        if (addedscore > 50)
+        {
+            StartCoroutine(AnimateText(Color.green));
+        }
+        else
+        {
+            StartCoroutine(AnimateText(Color.yellow));
+
+        }
+            InGameScoreText.text = Score.ToString();
+    }
+
+    IEnumerator AnimateText(Color color)
+    {
+        InGameScoreText.color =  color;
+        yield return new WaitForSeconds(0.1f);
+        InGameScoreText.color = Color.white;
+
     }
 }
 
