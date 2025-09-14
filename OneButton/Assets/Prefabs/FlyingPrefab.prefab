@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6859736034212758976}
   - component: {fileID: 5036435435367703452}
   - component: {fileID: 7628099877598310482}
-  - component: {fileID: 3954309625583900196}
+  - component: {fileID: 7511931441095315673}
   m_Layer: 10
   m_Name: FlyingPrefab
   m_TagString: Untagged
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 30
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 8027556901325421686, guid: fdd61d9f89b6ca74fbae1046d3a9c46b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,13 +105,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 1
-  ScoreOnDestroyed: 300
+  ScoreOnDestroyed: 500
   ScoreOnDamaged: 0
   Sprite: {fileID: 1775263526525225130}
   DamageParticles: {fileID: 5036435435367703452}
   SmokePrefab: {fileID: 2414823642620138583, guid: 9be1a645cba52e64b8825919fb2b7ad8, type: 3}
   rb: {fileID: 7628099877598310482}
-  MoveSpeed: 0.5
 --- !u!199 &6859736034212758976
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4997,8 +4996,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3954309625583900196
-BoxCollider2D:
+--- !u!70 &7511931441095315673
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5032,14 +5031,5 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 1.375, y: 2}
+  m_Direction: 0

@@ -38,7 +38,6 @@ public class PlayerController : ApplyDestruction
     private float _heldTime = 0;
     private bool _startHold = false;
 
-
     private float _slamKnockback;
     
     private bool _canMove = true;
@@ -105,7 +104,7 @@ public class PlayerController : ApplyDestruction
             Rb.linearVelocityX = MovementSpeed * (int)Direction;
     }
 
-    //Call to reverse the players movement direction
+    //reverse the players movement direction
     public void FlipDirection()
     {
         bool direction = true;
@@ -130,10 +129,10 @@ public class PlayerController : ApplyDestruction
         }
     }
 
-    //check if on ground, returns whether grounded or not
+    //Check if on ground, returns whether grounded or not
     private bool Grounded()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.3f, Vector2.down, 0.75f, GroundedLayers);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.4f, Vector2.down, 0.5f, GroundedLayers);
         bool isGrounded = hit.collider != null;
 
         return isGrounded;
@@ -158,7 +157,7 @@ public class PlayerController : ApplyDestruction
         }
     }
 
-    //called when space is released, determines what action was taken
+    //Called when space is released, determines what action was taken
     private void CheckInputType(float time)
     {
         if (Grounded())
@@ -185,7 +184,6 @@ public class PlayerController : ApplyDestruction
         }
     }
 
-    
 
     IEnumerator GroundSlam(float slamKB)
     {
@@ -204,12 +202,8 @@ public class PlayerController : ApplyDestruction
 
         Rb.AddForce(Vector2.down * 30, ForceMode2D.Impulse);
 
-        
-
         // Wait until grounded
         yield return new WaitUntil(() => Grounded());
-
-        
 
         //Knockback applied on landed
         GameObject[] targets = GetAllObjects(Vector2.down, SlamRadius);

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5266400284465369726}
   - component: {fileID: 521324778770913380}
   - component: {fileID: 7012276257798229798}
+  - component: {fileID: -2501287216321458559}
   m_Layer: 0
   m_Name: SmokeEmitter
   m_TagString: Untagged
@@ -4903,10 +4904,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 093d52fe0f7d78c45aa61dd90a9cced3, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 200d47097e4c3ef469ca0573b44229dd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: -0.33
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -4989,3 +4990,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2501287216321458559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2414823642620138583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290e647d3486bec46bc0ca2810a6348a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 7012276257798229798}

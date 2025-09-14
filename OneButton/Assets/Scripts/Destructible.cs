@@ -13,13 +13,19 @@ public class Destructible : MonoBehaviour
     [SerializeField] private ParticleSystem DamageParticles; 
     [SerializeField] private GameObject SmokePrefab;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip DamagedAudio;
+   
+
     [SerializeField] Rigidbody2D rb;
 
     private int _maxHealth;
-    
+    private float pitch;
 
     private void Start()
     {
+        pitch = Random.Range(0.6f, 1.4f);
+        audioSource.pitch = pitch;
         _maxHealth = Health;
        
     }
@@ -45,6 +51,7 @@ public class Destructible : MonoBehaviour
         }
         else if (currentHealth <= _maxHealth * 0.5f)
         {
+            audioSource.PlayOneShot(DamagedAudio);
             ScoreManager.Instance.AddScore(ScoreOnDamaged);
         }
         StartCoroutine(LayerSwitcher());
@@ -61,7 +68,7 @@ public class Destructible : MonoBehaviour
         gameObject.layer = 9;
         Sprite.sortingOrder = 3;
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
 
        
        
@@ -70,7 +77,7 @@ public class Destructible : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(rb.linearVelocity.magnitude > 5) 
+        if(rb.linearVelocity.magnitude > 4) 
         {
             health--;
         }
@@ -86,7 +93,8 @@ public class Destructible : MonoBehaviour
         StopAllCoroutines();
         ScoreManager.Instance.AddScore(ScoreOnDestroyed);
 
-    
+        
+
         if (SmokePrefab != null)
         {
             GameObject smokeGO = Instantiate(SmokePrefab, transform.position, Quaternion.identity);
