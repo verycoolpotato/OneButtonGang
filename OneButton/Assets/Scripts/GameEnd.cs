@@ -17,6 +17,8 @@ public class GameEnd : MonoBehaviour
 
     [SerializeField] Sprite[] MedalSprites;
 
+    [SerializeField] SpriteRenderer MedalSpriteRenderer;
+
     private ScoreManager scoreManager;
    
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,6 +37,26 @@ public class GameEnd : MonoBehaviour
 
 
             Debug.Log(MedalRanking.ToString());
+
+            switch (MedalRanking)
+            {
+                case < 5000:
+                    MedalSpriteRenderer.sprite = MedalSprites[4];
+                    break;
+                case >= 5000 and < 15000:
+                    MedalSpriteRenderer.sprite = MedalSprites[3];
+                    break;
+                case >= 15000 and < 30000:
+                    MedalSpriteRenderer.sprite = MedalSprites[2];
+                    break;
+                case >= 30000 and < 50000:
+                    MedalSpriteRenderer.sprite = MedalSprites[1];
+                    break;
+                case >= 50000:
+                    MedalSpriteRenderer.sprite = MedalSprites[0];
+                    break;
+
+            }
 
         }
     }
