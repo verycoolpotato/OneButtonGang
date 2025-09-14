@@ -19,8 +19,15 @@ public class ScoreManager : MonoBehaviour
             Destroy(this);
     }
 
+    private void Start()
+    {
+        Score = 0;
+    }
+
     private void Awake()
     {
+        
+
         SingletonSetup();
         _totalDestructibles = new List<Destructible>(
             Object.FindObjectsByType<Destructible>(FindObjectsSortMode.None));

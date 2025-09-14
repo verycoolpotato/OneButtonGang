@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FlyingObject : Destructible
 {
-    [SerializeField] float MoveSpeed;
+    private float MoveSpeed;
   
     private void FixedUpdate()
     {
@@ -13,7 +13,10 @@ public class FlyingObject : Destructible
             transform.position = new Vector2(110, transform.position.y);
         }
     }
-
+    private void Start()
+    {
+        MoveSpeed = Random.Range(0.1f, 0.6f);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         health--;
