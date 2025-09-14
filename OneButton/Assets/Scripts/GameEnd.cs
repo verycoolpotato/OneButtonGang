@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameEnd : MonoBehaviour
@@ -16,20 +17,32 @@ public class GameEnd : MonoBehaviour
 
     [SerializeField] Sprite[] MedalSprites;
 
+    private ScoreManager scoreManager;
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.name == "Player")
         {
             EndMenuObj.SetActive(true);
 
-            
-            ScoreDisplay.text = ScoreManager.Instance.GetScore().ToString() + " Points";
-            PercentDisplay.text = ScoreManager.Instance.GetDestructionPercent().ToString("F0") + "% Damage";
+            int score = scoreManager.GetScore();
+            float percent = scoreManager.GetDestructionPercent();
+
+            ScoreDisplay.text = score.ToString() + " Points";
+            PercentDisplay.text = percent.ToString("F0") + "% Damage";
+
+            int MedalRanking = score * (int)percent;
+
+
+            Debug.Log(MedalRanking.ToString());
 
         }
     }
 
-    
+    private void Awake()
+    {
+        scoreManager = ScoreManager.Instance;
+    }
 
     //Called by buttons
     public void ReturnToMenu()
