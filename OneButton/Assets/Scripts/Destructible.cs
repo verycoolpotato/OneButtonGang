@@ -57,13 +57,13 @@ public class Destructible : MonoBehaviour
 
     private IEnumerator LayerSwitcher()
     {
-        // Set temporary layer and sprite order
+      
         gameObject.layer = 9;
         Sprite.sortingOrder = 3;
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
 
-        // After 0.3s, allow collisions
+       
        
         gameObject.layer = 7;
     }
@@ -91,7 +91,7 @@ public class Destructible : MonoBehaviour
         {
             GameObject smokeGO = Instantiate(SmokePrefab, transform.position, Quaternion.identity);
            
-            //Destroy(smokeGO, 4);
+           
         }
 
         Destroy(gameObject);

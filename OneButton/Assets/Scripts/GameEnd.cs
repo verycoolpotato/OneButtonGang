@@ -8,20 +8,17 @@ public class GameEnd : MonoBehaviour
     [Tooltip("Name of the scene used for MainMenu")]
     [SerializeField] string MenuSceneName;
 
-
+    [SerializeField] GameObject EndMenuObj;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.name == "Player")
         {
-            EndMenu();
+            EndMenuObj.SetActive(true);
         }
     }
 
-    private void EndMenu()
-    {
-
-    }
+    
 
     //Called by buttons
     public void ReturnToMenu()
