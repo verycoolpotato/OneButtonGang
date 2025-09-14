@@ -114,7 +114,6 @@ MonoBehaviour:
   SmokePrefab: {fileID: 2414823642620138583, guid: 9be1a645cba52e64b8825919fb2b7ad8, type: 3}
   audioSource: {fileID: -1757832310993898603}
   DamagedAudio: {fileID: 8300000, guid: e660ab12b752c6941bdf4eb1dc8a7085, type: 3}
-  BreakAudio: {fileID: 8300000, guid: e660ab12b752c6941bdf4eb1dc8a7085, type: 3}
   rb: {fileID: 2047640282159373954}
   HasPlatform: 0
 --- !u!61 &8326282226672023940
@@ -5057,7 +5056,7 @@ AudioSource:
   m_GameObject: {fileID: 3755531437673912446}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 093d52fe0f7d78c45aa61dd90a9cced3, type: 2}
+  OutputAudioMixerGroup: {fileID: -3186324305197480084, guid: 093d52fe0f7d78c45aa61dd90a9cced3, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1

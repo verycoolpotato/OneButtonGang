@@ -77,10 +77,10 @@ public class PlayerController : ApplyDestruction
         {
             _heldTime += Time.deltaTime;
         }
-        if (_heldTime > 0.1f)
+        if (_heldTime > 0.05f)
         {
 
-            float rampTime = 0.6f;
+            float rampTime = 0.5f;
             float minSpeed = 3f;
 
             MovementSpeed = _defaultMoveSpeed - (_defaultMoveSpeed - minSpeed) * Mathf.Clamp01(_heldTime / rampTime);
@@ -174,7 +174,7 @@ public class PlayerController : ApplyDestruction
             }
                
         }
-        else if (time > 0.7f && Grounded())
+        else if (time > 0.6f && Grounded())
         {
            GameObject target =  GetClosestObject(Vector2.right * (int)Direction, 1f);
             PlayerAnimator.SetTrigger("Swing");
