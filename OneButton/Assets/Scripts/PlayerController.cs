@@ -28,6 +28,8 @@ public class PlayerController : ApplyDestruction
 
     [SerializeField] private float SlamRadius;
 
+    [SerializeField] private SpriteRenderer ThisSpriteRenderer;
+
     private int _jumps = 2;
 
     //For input timings
@@ -54,7 +56,10 @@ public class PlayerController : ApplyDestruction
     private void Update()
     {
         Timers();
-       
+       if(transform.position.x > 105)
+        {
+            FlipDirection();
+        }
     }
     private void Timers()
     {
@@ -102,6 +107,8 @@ public class PlayerController : ApplyDestruction
     {
         bool direction = true;
         direction = !direction;
+
+        ThisSpriteRenderer.flipX = true;
 
         Direction = direction ? Directions.Right : Directions.Left;
     }

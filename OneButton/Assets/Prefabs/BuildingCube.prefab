@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 3
-  ScoreOnDestroyed: 0
-  ScoreOnDamaged: 0
+  ScoreOnDestroyed: 5
+  ScoreOnDamaged: 1
   Sprite: {fileID: 4542409491791872170}
   DamageParticles: {fileID: -945324418057690355}
   SmokePrefab: {fileID: 2414823642620138583, guid: 9be1a645cba52e64b8825919fb2b7ad8, type: 3}

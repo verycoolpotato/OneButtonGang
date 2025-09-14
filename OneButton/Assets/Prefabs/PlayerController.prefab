@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 963203192721179539}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.34545517, y: 0.61238396, z: -10.024743}
+  m_LocalPosition: {x: -5.2745447, y: 0.61238384, z: -13.024743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -170,7 +170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2674956485497131400}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.2745447, y: -0.51761603, z: -0.024743387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -257,6 +257,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   SlamRadius: 1
+  ThisSpriteRenderer: {fileID: 7322914712226125388}
 --- !u!50 &7572054242043852398
 Rigidbody2D:
   serializedVersion: 5
@@ -456,7 +457,7 @@ Transform:
   m_GameObject: {fileID: 6704157752723084786}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.34545517, y: 0.61238396, z: -10.024743}
+  m_LocalPosition: {x: -5.2745447, y: 0.61238384, z: -13.024743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -519,11 +520,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackerSettings:
     BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
+    PositionDamping: {x: 0, y: 1, z: 1}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 5.62, y: 1.13, z: -10}
+  FollowOffset: {x: 0, y: 1.13, z: -13}
 --- !u!1 &9010829844528564594
 GameObject:
   m_ObjectHideFlags: 0
