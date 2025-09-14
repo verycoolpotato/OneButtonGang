@@ -42,7 +42,7 @@ public class GameEnd : MonoBehaviour
 
             switch (MedalRanking)
             {
-                case < 10000:
+                case < 15000:
                     MedalSpriteRenderer.sprite = MedalSprites[4];
                     break;
                 case >= 15000 and < 20000:

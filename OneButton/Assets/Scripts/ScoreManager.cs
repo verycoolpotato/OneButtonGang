@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
     private List<Destructible> _totalDestructibles;
     private float _invTotalDestructibles;
 
-    private int Score;
+    [SerializeField] private int Score;
 
     public static ScoreManager Instance;
     [SerializeField] private TextMeshProUGUI InGameScoreText;

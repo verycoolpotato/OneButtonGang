@@ -2912,6 +2912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d97c8c24229af4792f836e561898e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: 0
   InGameScoreText: {fileID: 1053228089}
 --- !u!4 &192499061
 Transform:
@@ -25820,6 +25821,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 202102216076560277, guid: d3bd6a38925193c47a32a0728bfc7cca, type: 3}
+      propertyPath: Direction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 202102216076560277, guid: d3bd6a38925193c47a32a0728bfc7cca, type: 3}
       propertyPath: PlayerCollider
       value: 
