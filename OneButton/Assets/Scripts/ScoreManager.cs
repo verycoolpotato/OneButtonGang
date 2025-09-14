@@ -47,5 +47,10 @@ public class ScoreManager : MonoBehaviour
     {
         //Save score locally
     }
+
+    public int GetScore()
+    {
+        return Score;
+    }
 }
 

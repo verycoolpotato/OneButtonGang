@@ -256,7 +256,7 @@ MonoBehaviour:
   BreakableLayers:
     serializedVersion: 2
     m_Bits: 128
-  SlamRadius: 1
+  SlamRadius: 2
   ThisSpriteRenderer: {fileID: 7322914712226125388}
 --- !u!50 &7572054242043852398
 Rigidbody2D:
