@@ -9,7 +9,7 @@ public class ScreenScroll : MonoBehaviour
 
         if(transform.position.x < -19)
         {
-            transform.position = new Vector2 (19, -3);
+            transform.position = new Vector3 (19, transform.position.y, transform.position.z);
         }
     }
 }
