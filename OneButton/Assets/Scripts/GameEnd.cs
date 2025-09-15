@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
@@ -21,13 +22,16 @@ public class GameEnd : MonoBehaviour
     [SerializeField] SpriteRenderer MedalSpriteRenderer;
 
     private ScoreManager scoreManager;
-    
-    
+
+    [SerializeField] AudioLowPassFilter MusicLowPass;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.name == "Player")
         {
             EndMenuObj.SetActive(true);
+
+            MusicLowPass.cutoffFrequency = 500f;
+            
 
             int score = scoreManager.GetScore();
             float percent = scoreManager.GetDestructionPercent();
@@ -38,7 +42,7 @@ public class GameEnd : MonoBehaviour
             int MedalRanking = score * (int)percent / 100;
 
 
-            Debug.Log(MedalRanking.ToString());
+          
 
             switch (MedalRanking)
             {
@@ -59,24 +63,16 @@ public class GameEnd : MonoBehaviour
                     break;
             }
 
-
-
-
-
-
-
-
-
         }
     }
-
+   
     private void Awake()
     {
         scoreManager = ScoreManager.Instance;
+        
 
-       
     }
-
+   
     //Called by buttons
     public void ReturnToMenu()
     {
@@ -88,7 +84,7 @@ public class GameEnd : MonoBehaviour
     public void RetryGame()
     {
         SaveScore();
-        //hardcoded since there is only one gameplay scene
+      
         SceneManager.LoadScene(GameplaySceneName);
     }
 
