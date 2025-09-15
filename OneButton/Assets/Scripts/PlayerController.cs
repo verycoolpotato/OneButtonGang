@@ -32,6 +32,10 @@ public class PlayerController : ApplyDestruction
 
     [SerializeField] private CapsuleCollider2D PlayerCollider;
 
+    [SerializeField] private AudioClip[] SoundFx;
+
+    [SerializeField] private AudioSource Source;
+
     private int _jumps = 2;
 
     //For input timings
@@ -79,13 +83,13 @@ public class PlayerController : ApplyDestruction
         }
         if (_heldTime > 0.05f)
         {
-
-            float rampTime = 0.5f;
-            float minSpeed = 3f;
+           
+            float rampTime = 1f;
+            float minSpeed = 2f;
 
             MovementSpeed = _defaultMoveSpeed - (_defaultMoveSpeed - minSpeed) * Mathf.Clamp01(_heldTime / rampTime);
-
         }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -120,6 +124,10 @@ public class PlayerController : ApplyDestruction
     {
         if (_jumps > 0)
         {
+            Source.PlayOneShot(SoundFx[2],0.7f);
+
+            Source.pitch = Random.Range(0.6f, 1.4f);
+
             PlayerCollider.size = new Vector2(PlayerCollider.size.x, 0.3f);
             PlayerAnimator.SetBool("Jump", true);
             Rb.linearVelocity = Vector2.zero;
@@ -137,7 +145,6 @@ public class PlayerController : ApplyDestruction
 
         return isGrounded;
     }
-
 
     //Called when spacebar is pressed, checks how long it is held for
     public void OnHold(InputAction.CallbackContext context)
@@ -174,8 +181,9 @@ public class PlayerController : ApplyDestruction
             }
                
         }
-        else if (time > 0.6f && Grounded())
+        else if (time > 0.2f && Grounded())
         {
+            Source.PlayOneShot(SoundFx[1]);
            GameObject target =  GetClosestObject(Vector2.right * (int)Direction, 1f);
             PlayerAnimator.SetTrigger("Swing");
             DealDamage(target);
@@ -205,6 +213,7 @@ public class PlayerController : ApplyDestruction
         // Wait until grounded
         yield return new WaitUntil(() => Grounded());
 
+        Source.PlayOneShot(SoundFx[3]);
         //Knockback applied on landed
         GameObject[] targets = GetAllObjects(Vector2.down, SlamRadius);
 

@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rb: {fileID: 7572054242043852398}
   MovementSpeed: 5
-  JumpHeight: 15
+  JumpHeight: 17
   SwingKnockback: 1000
   PlayerAnimator: {fileID: 7208867171831816520}
   Direction: 1
@@ -259,6 +259,8 @@ MonoBehaviour:
   SlamRadius: 2
   ThisSpriteRenderer: {fileID: 7322914712226125388}
   PlayerCollider: {fileID: 5325157250341825818}
+  SoundFx: []
+  Source: {fileID: 0}
 --- !u!50 &7572054242043852398
 Rigidbody2D:
   serializedVersion: 5
