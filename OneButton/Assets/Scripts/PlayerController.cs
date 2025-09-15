@@ -177,17 +177,30 @@ public class PlayerController : ApplyDestruction
             else if (_slamCooldown <= 0)
             {
                 
-                StartCoroutine(GroundSlam(_slamKnockback));
+                StartCoroutine(GroundSlam(_slamKnockback * 2));
             }
                
         }
         else if (time > 0.2f && Grounded())
         {
             Source.PlayOneShot(SoundFx[1]);
-           GameObject target =  GetClosestObject(Vector2.right * (int)Direction, 1f);
+           GameObject[] target =  GetAllObjects(Vector2.right * (int)Direction, 0.5f);
+            
+
+            for (int i = 0; i < target.Length; i++)
+            {
+                if (target[i] != null)
+                {
+
+                    DealDamage(target[i]);
+                    ApplyKnockback(target[i], (int)Direction, SwingKnockback);
+
+
+                }
+            }
+
             PlayerAnimator.SetTrigger("Swing");
-            DealDamage(target);
-            ApplyKnockback(target, (int)Direction, SwingKnockback);
+            
            
         }
     }

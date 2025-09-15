@@ -77,7 +77,7 @@ public class Destructible : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(rb.linearVelocity.magnitude > 4) 
+        if(rb.linearVelocity.magnitude > 10) 
         {
             health--;
         }
