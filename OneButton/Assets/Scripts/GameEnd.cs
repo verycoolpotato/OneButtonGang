@@ -23,6 +23,8 @@ public class GameEnd : MonoBehaviour
 
     private ScoreManager scoreManager;
 
+    [SerializeField] GameObject GameScoreText;
+
     [SerializeField] AudioLowPassFilter MusicLowPass;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,6 +34,7 @@ public class GameEnd : MonoBehaviour
 
             MusicLowPass.cutoffFrequency = 500f;
             
+            GameScoreText.SetActive(false);
 
             int score = scoreManager.GetScore();
             float percent = scoreManager.GetDestructionPercent();
