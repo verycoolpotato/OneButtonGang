@@ -140,7 +140,7 @@ public class PlayerController : ApplyDestruction
     //Check if on ground, returns whether grounded or not
     private bool Grounded()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.4f, Vector2.down, 0.5f, GroundedLayers);
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.4f, Vector2.down, 1.1f, GroundedLayers);
         bool isGrounded = hit.collider != null;
 
         return isGrounded;
