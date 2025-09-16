@@ -40,31 +40,33 @@ public class GameEnd : MonoBehaviour
             float percent = scoreManager.GetDestructionPercent();
 
             ScoreDisplay.text = score.ToString() + " Points";
-            PercentDisplay.text = percent.ToString("F0") + "% Damage";
+            PercentDisplay.text = percent.ToString("F0") + " Percent Damage";
 
             int MedalRanking = score * (int)percent / 100;
 
 
-          
+
 
             switch (MedalRanking)
             {
-                case < 1000:
+                case < 1250:
                     MedalSpriteRenderer.sprite = MedalSprites[4];
                     break;
-                case >= 1000 and < 3500:
+                case >= 1250 and < 4000:
                     MedalSpriteRenderer.sprite = MedalSprites[3];
                     break;
-                case >= 3500 and < 6000:
+                case >= 4000 and < 6750:
                     MedalSpriteRenderer.sprite = MedalSprites[2];
                     break;
-                case >= 6000 and < 8500:
+                case >= 6750 and < 11000:
                     MedalSpriteRenderer.sprite = MedalSprites[1];
                     break;
-                case >= 8500:
+                case >= 11000:
                     MedalSpriteRenderer.sprite = MedalSprites[0];
                     break;
             }
+
+
 
         }
     }

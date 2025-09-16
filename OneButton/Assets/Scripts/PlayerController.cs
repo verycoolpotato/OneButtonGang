@@ -209,7 +209,7 @@ public class PlayerController : ApplyDestruction
     IEnumerator GroundSlam(float slamKB)
     {
          
-        _slamCooldown = 1.5f;
+        _slamCooldown = 1f;
         _canMove = false;
 
         // Stop motion and ensure gravity
